@@ -23,6 +23,7 @@
 .editorpick {
     background: #fff;
     margin: 0 0 20px;
+    display: -webkit-box;
 }
 
 .editorpick-holder {
@@ -30,6 +31,7 @@
     float: left;
     width: 65.3%;
     position: relative;
+    max-height: 1000000px;
 }
 
 .absolute-div {
@@ -50,6 +52,13 @@
 .player-holder {
     margin: 0 0 18px;
     position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.player-holder iframe {
+    width: 100%;
+    height: 100%;
 }
 
 .editorpick-videos {
