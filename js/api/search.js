@@ -7,7 +7,9 @@ function onClientLoad() {
 // Called automatically when YouTube API interface is loaded (see line 9).
 function onYouTubeApiLoad() {
     gapi.client.setApiKey('AIzaSyCMor_xHG7DyR6IaWtSlE3FYbCEsmdSH0M');
-    search()
+    // search()
+    // videosGetRating();
+    getMostPopular();
 }
 
 // Called when the search button is clicked in the html code
@@ -27,16 +29,17 @@ function onSearchResponse(response) {
     var responseString = JSON.stringify(response, '', 2);
     var dataSearch = ModelSearch.getInstance(responseString);
     $('.player-holder').append("<iframe src='https://www.youtube.com/embed/"+ dataSearch.items[0].id.videoId + "'></iframe>");
-    makeHtmlEditorPickVideos(dataSearch.items);
-    
+    $('.scrollable-area').append(makeHtmlEditorPickVideos(dataSearch.items));
+    document.getElementById('response').innerHTML = responseString;
 }
 
 function makeHtmlEditorPickVideos(videos) {
-    var htmlString;
+    var htmlString = "";
     for (i = 0; i < videos.length; i ++) {
         console.log('xxxxx', videos[i].id.videoId);
-        htmlString +=
+        htmlString += makeHtmlEpVideo(videos[i])
     }
+    return htmlString;
 }
 
 function makeHtmlEpVideo(video) {
@@ -44,11 +47,11 @@ function makeHtmlEpVideo(video) {
 
     htmlString += "<div class=\"video_thumb\">";
     htmlString += "<img src=\""+ video.snippet.thumbnails.default.url +"\" class=\"img-responsive\">";
-    htmlString += "<time datetime=\""+ video.snippet.thumbnails.publishedAt +"\" class=\"duration\">"+ video.snippet.thumbnails.publishedAt +"</time>";
+    htmlString += "<time datetime=\""+ video.snippet.publishedAt +"\" class=\"duration\">"+ moment(video.snippet.publishedAt).fromNow() +"</time>";
     htmlString += "</div>";
 
     htmlString +=  "<div class=\"details_block\">";
-    htmlString += "<strong class=\"title\"><a href=\"#\">" + video.snippet.thumbnails.title + "</a></strong>";
+    htmlString += "<strong class=\"title\"><a href=\"#\">" + video.snippet.title + "</a></strong>";
     htmlString += "</div>";
 
     htmlString += "</div>";

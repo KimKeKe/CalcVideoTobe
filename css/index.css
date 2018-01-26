@@ -119,6 +119,7 @@ iframe {
     color: #000;
     font: 400 16px/18px "source_sans_proregular", sans-serif;
     margin: 0 0 4px;
+    font-size: 12px;
 }
 
 .featured-video .author {
