@@ -1,4 +1,7 @@
 /*HEADER*/
+iframe {
+    border: none;
+}
 
 .site-logo {
     display: block;
@@ -76,7 +79,7 @@
 
 .editorpick-videos .scrollable-area {
     position: relative;
-    overflow: hidden;
+    overflow-y: scroll;
     width: 282px;
     height: 293px;
     padding: 0 4px 0 0;
@@ -123,9 +126,18 @@
     color: #0080b4;
 }
 
+.videos .row, .featured-videos .row {
+    margin: 0 -8px;
+}
+
 #sidebar {
     float: right;
     width: 25.6%;
+}
+
+.featured-videos {
+    margin: 0 0 4px;
+    display: block;
 }
 
  /*FOOTER*/

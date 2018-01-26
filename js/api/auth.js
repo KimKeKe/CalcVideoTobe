@@ -3,6 +3,7 @@
     // Global variables for GoogleAuth object, auth status.
 var GoogleAuth;
 
+// AIzaSyCMor_xHG7DyR6IaWtSlE3FYbCEsmdSH0M
 /**
  * Load the API's client and auth2 modules.
  * Call the initClient function after the modules load.
@@ -10,6 +11,7 @@ var GoogleAuth;
 function handleClientLoad() {
     gapi.load('client:auth2', initClient);
     // getMostPopular();
+    search();
 }
 
 function initClient() {
@@ -18,7 +20,7 @@ function initClient() {
     // 'scope' field specifies space-delimited list of access scopes
 
     gapi.client.init({
-        'clientId': '414874784017-uhrqh8g1l3og7kohgpnj07677smt5fsp.apps.googleusercontent.com',
+        'clientId': '432438312083-f0g3rt9adueov53bb9e0mt539u616920.apps.googleusercontent.com',
         'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
         'scope': 'https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtubepartner'
     }).then(function () {
@@ -33,8 +35,8 @@ function initClient() {
         // Call handleAuthClick function when user clicks on "Authorize" button.
         $('#execute-request-button').click(function() {
             // handleAuthClick(event);
-            // getMostPopular();
-            searchMostView();
+            getMostPopular();
+            // searchMostView();
         });
     });
 }
@@ -178,7 +180,7 @@ function getMostPopular() {
             'regionCode': 'VN',
             'part': 'snippet,contentDetails,statistics',
             // 'videoCategoryId': '2',
-            'key': 'AIzaSyCk1r6aQeNMRWT2RKTBy5qXwufcuA-0dRg',
+            'key': 'AIzaSyCMor_xHG7DyR6IaWtSlE3FYbCEsmdSH0M',
             'maxResults': '5',
             'pageToken': ''});
 }
@@ -188,7 +190,7 @@ function searchMostView() {
     buildApiRequest('GET',
         '/youtube/v3/search',
         {'part': 'snippet',
-            'key': 'AIzaSyCk1r6aQeNMRWT2RKTBy5qXwufcuA-0dRg',
+            'key': 'AIzaSyCMor_xHG7DyR6IaWtSlE3FYbCEsmdSH0M',
             'maxResults': '5',
             'order': 'viewCount',
             'q': 'youtube.com',

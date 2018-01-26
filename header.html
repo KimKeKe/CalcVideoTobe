@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Videos Ranking</title>
+    <link rel="canonical" href="http://videosranking.com">
+    <link rel="shortcut icon" href="/img/videos-rankking-logo.png">
+
+    <!--css-->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"></script>
+
+    <!--Custom js-->
+    <!--api-->
+    <script src="js/api/auth.js" type="text/javascript"></script>
+    <script src="js/api/search.js" type="text/javascript"></script>
+    <script src="js/api/fetchData.js" type="text/javascript"></script>
+    <!--model-->
+    <script src="./js/model/ModelSearch.js" type="text/javascript"></script>
+    <!--view-->
+    <script src="./js/view/EpVideoContainer.js" type="text/javascript"></script>
+
+</head>
+<body>
+<header class="">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mNavbar">
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </button>
+                <a class="navbar-brand site-logo" href="index.html">
+                    <img src="img/videos-rankking-logo.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="mNavbar">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a class="" href="./index.html">Home</a></li>
+                    <li><a class="" href="/">Most Popular</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Top Topic <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">EN</a></li>
+                            <li><a href="#">JA</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="" href="">Artists</a></li>
+                    <li><a class="" href="">Country</a></li>
+                    <li><a class="" href="">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+</body>
+</html>
